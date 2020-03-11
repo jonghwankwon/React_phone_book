@@ -60,8 +60,22 @@ class PhoneInfo extends Component {
             });
         }
     }
+    
+    // 렌더링 최적화
+    shouldComponentUpdate( nextProps, nextState ) {
+        // 수정 상태가 아니고, info 값이 같다면 리렌더링 안함
+        if(!this.state.editing
+            && !nextProps.editing
+            && nextProps.info === this.props.info) {
+                return false;
+            }
+            // 나머지 경우엔 리렌더링
+            return true;
+    }
 
     render() {
+        console.log('render PhoneInfo ' + this.props.info.id); // 최적화
+
         const style = {
             border: '1px solid black',
             padding: '8px',

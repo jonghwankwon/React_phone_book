@@ -9,6 +9,7 @@ class PhoneInfoList extends Component {
     }
 
     render() {
+        console.log('render PhoneInfoList');
         const { data, onRemove, onUpdate } = this.props;
         const list = data.map(  // data 라는 배열을 가져와서 map 을 통하여 JSX 로 변환
             info => (

@@ -53,7 +53,8 @@ class App extends Component {
         />
         <PhoneInfoList 
         data = {information}
-        onRemove={this.handleRomve}/>
+        onRemove={this.handleRomve}
+        onUpdate={this.handleUpdate}/>
       </div>
     );
   }
